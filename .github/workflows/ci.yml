@@ -1,0 +1,19 @@
+name: Alert parent repository on push
+
+on:
+  workflow_dispatch:
+  push:
+    branches:    
+      - main
+  
+jobs:
+  build:
+    name: Dispatch to `jarusll.github.io`
+    runs-on: ubuntu-latest
+    steps:
+    - name: Repository Dispatch
+      uses: myrotvorets/trigger-repository-dispatch-action@1.0.0
+      with:
+        token: ${{secrets.REPO_ACCESS_TOKEN}}
+        repo: jarusll/jarusll.github.io
+        type: fragments_push
