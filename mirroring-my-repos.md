@@ -5,6 +5,11 @@ tags:
 	- solution
 ---
 
+# Mirroring my github repos to bitbucket #
+
+## Update: ##
+You might wanna take a look at `git ... --mirror`
+
 On 13th of April, 2022 I was stuck with a ref lock thing with my portfolio repo. It was really dirty one and the only way I solved it was importing the repo to bitbucket & reimporting it back. Made me think about backups. 
 
 Fortunately, I was tinkering with Ansible[^1]. It was a good learning opporunity, mirror my repos using Ansible and I did it.
