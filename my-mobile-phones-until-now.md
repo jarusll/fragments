@@ -49,16 +49,24 @@ This would be end of T9 layout for me.
 ![Galaxy Y](https://drop.ndtv.com/TECH/product_database/images/530201330723PM_635_samsung_galaxy_y.png?downsize=*:420&output-quality=80)
 *Credit - https://gadgets360.com/samsung-galaxy-y-556*
 
-My first Android phone. I explored rooting & custom roms with it.
+My first Android phone. I explored rooting & custom roms with it. 
+
+Installing Tablet roms on the small screen was fun.
 
 ## Iball Slide Tablet ##
   * 10th grade - 12th grade
-  
+
+![Iball Slide](https://drop.ndtv.com/TECH/product_database/images/415201643705PM_635_iball_slide_co_mate.jpeg?downsize=*:420&output-quality=80)
+*Credit - https://gadgets360.com/iball-slide-co-mate-3439*
+
 My first tablet, I bought this to read. I only used this to read, didn't really tinker around with it.
 I read alot.
 
 ## Micromax Bolt A064 ##
   * 11th grade - 2nd year Uni
+
+![Micromax Bolt A064](https://drop.ndtv.com/TECH/product_database/images/103201434000PM_635_micromax_bolt_ao64.jpeg?downsize=*:420&output-quality=80)
+*Credit - https://gadgets360.com/micromax-bolt-a064-2026*
 
 This was during the time When I got my first PC & I lost interest with mobile tinkering.
 
