@@ -3,7 +3,7 @@ title: My mobile/tablets until now
 date: 2022-04-16
 tags:
 	- personal
-eleventyExcludeFromCollections: true	
+eleventyExcludeFromCollections: true
 ---
 
 # My mobile phones until now  #
@@ -39,21 +39,37 @@ Having this thing in my pocket I no longer felt like a boy, I was a grown up man
 
 My first Symbian phone. This was during when N95 was the coolest phone around. But I couldn't get one so I got an N91. 
 
-This thing was a chonky boi. I learnt alot with this phone. This phone taught me jailbreaking & emulation. I used to emulate sega genesis & doom on this. And if you rotatee & mapped the music buttons It actually felt like a handheld, just like N95.
+This thing was a chonky boi. I learnt alot with this phone. I tried jailbreaking & emulation. I used to emulate sega genesis & doom on this. And if you rotated & mapped the music buttons It actually felt like a handheld, just like N95.
+  
+This would be end of T9 layout for me.
   
 ## Samsung Galaxy Y GT-S5360 ##
   * 10th Grade
   
-My first Android phone 
+![Galaxy Y](https://drop.ndtv.com/TECH/product_database/images/530201330723PM_635_samsung_galaxy_y.png?downsize=*:420&output-quality=80)
+*Credit - https://gadgets360.com/samsung-galaxy-y-556*
+
+My first Android phone. I explored rooting & custom roms with it.
 
 ## Iball Slide Tablet ##
   * 10th grade - 12th grade
   
-My first tablet, I bought this to read. 
+My first tablet, I bought this to read. I only used this to read, didn't really tinker around with it.
+I read alot.
 
 ## Micromax Bolt A064 ##
-  * 11th grade - 2nd Uni year
-    
-## Vivo Y20 ##
-  * 2nd Uni year - Current
+  * 11th grade - 2nd year Uni
 
+This was during the time When I got my first PC & I lost interest with mobile tinkering.
+
+I still tinkered with it with Xposed modules. This was the peak of android mods. I maximised my battery life with Greenify, Amplify. Customized my ui with XBlast, hide my details with XPrivacy. 
+
+## Vivo Y20 ##
+  * 2nd year Uni - Current
+
+![Vivo Y20](https://fdn2.gsmarena.com/vv/pics/vivo/vivo-y20-2021-1.jpg)
+*Credit - https://www.gsmarena.com/vivoy202021-pictures-10658.php*
+
+I do not mess around with this phone. Its my daily driver & I want stability. I do not care about launchers or battery life or performance because it has it all. I want things to just work and it does. 
+
+I plan to use it as long as I can. When I get another phone(which is not anytime soon), this will become my emulation phone. I'll buy a telescopic controller & play games on it.
