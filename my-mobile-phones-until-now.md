@@ -2,8 +2,7 @@
 title: My mobile/tablets until now 
 date: 2022-04-16
 tags:
-	- personal
-eleventyExcludeFromCollections: true
+	- hardware
 ---
 
 # My mobile phones until now  #
