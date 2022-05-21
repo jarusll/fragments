@@ -1,6 +1,7 @@
 ---
 title: Mirroring my github repos to bitbucket
 date: 2022-04-15
+eleventyExcludeFromCollections: true
 tags:
 	- solution
 ---
