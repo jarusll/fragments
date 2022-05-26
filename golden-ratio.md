@@ -1,7 +1,7 @@
 ---
 title: Automatically resize focused emacs window to Golden ratio
 date: 2022-04-07
-tags: [emacs, checkout]
+tags: ["emacs", "checkout"]
 ---
 
 # Automatically resize focused emacs window to Golden ratio #
