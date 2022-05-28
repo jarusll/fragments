@@ -1,0 +1,149 @@
+#+title: Generate Permutations
+#+date: 2022-05-28
+#+draft: true
+#+tags: solution
+
+* What is permutation?
+
+  - What is permutation of ={ }=?
+    - ={ }=
+
+  - What is permutation of ={1}=?
+    - ={1}=
+
+  - What is permutation of ={1, 2}=?
+    - ={1, 2}=
+    - ={2, 1}=
+
+  - What is permutation of ={1, 2, 3}=?
+    - ={1, 2, 3}=
+    - ={1, 3, 2}=
+    - ={2, 1, 3}=
+    - ={2, 3, 1}=
+    - ={3, 1, 2}=
+    - ={3, 2, 1}=
+
+  - Which of them start with =1=?
+    - ={1, 2, 3}=
+    - ={1, 3, 2}=
+
+  - What is the rest of these elements?
+    - ={2, 3}=
+    - ={3, 2}=
+
+  - Do they look like something?
+    - No
+
+  - What about permutation of ={2, 3}=?
+    - Yes
+
+  - What is append x on {y, z}? 
+    - {x, y, z}
+      
+  - What is append x on each {y, z}? 
+    - {x, y}
+    - {x, z}
+  
+  - Can we say Permutation of ={1, 2, 3}= = 
+    ={append 1 on each permutation of {2, 3}}, {append 2 on each permutation of {1, 3}}, {append 3 on each permutation of {1, 2}}}=?
+    - Thats a mouthful
+  
+  - What is ={append 1 on each permutation of {2, 3}}=?
+    - ={append 1 on each permutation of {2, 3}}=
+    - ={append 1 on each {{2, 3}, {3, 2}} }=
+    - ={{1, 2, 3}, {1, 3, 2}}=
+  
+  - What about ={append 2 on each permutation of {1, 3}}, {append 3 on each permutation of {1, 2}}=?
+    - ={{2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}}=
+
+  - What do we get when we club them all?
+    - ={{1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}}=
+    - ie =permutation of {1, 2, 3}=
+      
+  - Do you know what permutation is now?
+    - Yes
+
+* Coding it
+
+  We'll be using functional javascript.
+
+  #+NAME: permute
+  #+BEGIN_SRC js :noweb no
+
+    function permute(array){
+	    <<permute-base-case>>
+	    <<permute-reduction-case>>
+    }
+  #+END_SRC
+  
+** BASE CASE
+
+   The base case for permutation is array with 0 or 1 element
+   
+   | Input | Output |
+   |-------+--------|
+   | [ ]   | [ ]    |
+   | [x]   | [x]    |
+
+   #+NAME: permute-base-case
+   #+BEGIN_SRC js
+     if (array.length <= 1){
+	     return array
+     }
+   #+END_SRC
+
+** REDUCTION CASE
+
+   For the reduction case
+   - loop every element in array
+   - head = looping element
+   - rest = remove head from array
+   - rest_permutation = get permutation of rest
+   - append head on every rest_permutation
+
+   #+NAME: permute-reduction-case
+   #+BEGIN_SRC js
+
+     return array.map(item => {
+	     const head = item
+	     const rest = remove(head, array)
+	     const rest_permutation = permute(rest)
+	     return rest_permutation.map(x => append(head, x))
+     })
+   #+END_SRC
+
+   You should not worry about the utility functions =remove=, =append= as they are trivial and you can write them yourself.
+   
+   Here's the implementation of utility functions
+   
+   #+NAME: utils
+   #+BEGIN_SRC js
+     function clone(x){
+	     return JSON.parse(JSON.stringify(x))
+     }
+
+     function remove(item, array){
+	     const cloned = clone(array)
+	     cloned.splice(cloned.indexOf(item), 1)
+	     return cloned
+     }
+
+     function append(item, array){
+	     return [item].concat(array)
+     }
+
+   #+END_SRC
+   
+   #+BEGIN_SRC js :noweb yes
+     <<utils>>
+
+      function permute(array){
+	      <<permute-base-case>>
+	      <<permute-reduction-case>>
+      }
+
+      return JSON.stringify(permute([1, 2, 3]))
+   #+END_SRC
+
+   #+RESULTS:
+   : [ [ 1, 2, 3 ], [ 1, 3, 2 ] ]
