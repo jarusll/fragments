@@ -76,7 +76,10 @@
     }
   #+END_SRC
   
-** BASE CASE
+** BASE CASE 
+   :PROPERTIES:
+   :CUSTOM_ID: basecase
+   :END:
 
    The base case for permutation is array with 0 or 1 element
    
@@ -88,10 +91,10 @@
    #+NAME: permute-base-case
    #+BEGIN_SRC js
      if (array.length <= 1){
-	     return array
+	 return array
      }
    #+END_SRC
-
+   
 ** REDUCTION CASE
 
    For the reduction case
@@ -105,10 +108,10 @@
    #+BEGIN_SRC js
 
      return array.map(item => {
-	     const head = item
-	     const rest = remove(head, array)
-	     const rest_permutation = permute(rest)
-	     return rest_permutation.map(x => append(head, x))
+	 const head = item
+	 const rest = remove(head, array)
+	 const rest_permutation = permute(rest)
+	 return rest_permutation.map(x => append(head, x))
      })
    #+END_SRC
 
@@ -117,33 +120,141 @@
    Here's the implementation of utility functions
    
    #+NAME: utils
-   #+BEGIN_SRC js
+   #+BEGIN_SRC js :noweb strip-export
      function clone(x){
-	     return JSON.parse(JSON.stringify(x))
+	 return JSON.parse(JSON.stringify(x))
      }
 
      function remove(item, array){
-	     const cloned = clone(array)
-	     cloned.splice(cloned.indexOf(item), 1)
-	     return cloned
+	 const cloned = clone(array)
+	 cloned.splice(cloned.indexOf(item), 1)
+	 return cloned
      }
 
      function append(item, array){
-	     return [item].concat(array)
+	 return [item].concat(array)
      }
 
+     <<flatten>>
    #+END_SRC
+
+** Testing
+
+   Lets test to assert the algorithm correctness
    
-   #+BEGIN_SRC js :noweb yes
-     <<utils>>
+*** Full test code
+    #+NAME: test
+    #+BEGIN_SRC js
+
+      <<utils>>
 
       function permute(array){
 	      <<permute-base-case>>
 	      <<permute-reduction-case>>
       }
+    #+END_SRC
 
-      return JSON.stringify(permute([1, 2, 3]))
+*** Testing 1
+
+   #+BEGIN_SRC js :noweb strip-export :exports both
+     <<test>>
+     return permute([1])
+
    #+END_SRC
 
    #+RESULTS:
-   : [ [ 1, 2, 3 ], [ 1, 3, 2 ] ]
+   : [ 1 ]
+
+*** Testing 2
+   #+BEGIN_SRC js :noweb strip-export :exports both
+   <<test>>
+   return permute([1, 2])
+   
+   #+END_SRC
+
+   #+RESULTS:
+   : [ [ [ 1, 2 ] ], [ [ 2, 1 ] ] ]
+
+   This is odd. 
+   
+   - Did we miss something?
+     - Yes
+       
+   - What should =permutation of {1, 2}= look like?
+     - =[[1, 2], [2, 1]]=
+   
+   - If only there was a way to flatten the lists
+
+     #+NAME: flatten
+     #+BEGIN_SRC js
+
+       function flatten(array){
+	   return array.reduce((acc, val) => acc.concat(val), []);
+       }
+
+     #+END_SRC
+
+
+     Lets integrate it in the Reduction Case
+
+     #+NAME: new-permute-reduction-case
+     #+BEGIN_SRC js
+       return flatten(array.map(item => {
+	   const head = item
+	   const rest = remove(head, array)
+	   const rest_permutation = permute(rest)
+	   return rest_permutation.map(x => append(head, x))
+       }))
+    #+END_SRC
+    
+    The final code is
+
+    #+NAME: final
+    #+BEGIN_SRC js :noweb yes 
+
+      <<utils>>
+
+      function permute(array){
+	      <<permute-base-case>>
+	      <<new-permute-reduction-case>>
+      }
+
+    #+END_SRC
+
+
+*** Testing 2 again
+    
+    #+BEGIN_SRC js :noweb strip-export :exports both
+    
+    <<final>>
+    
+    return permute([1, 2])
+    
+    #+END_SRC
+
+    #+RESULTS:
+    : [ [ 1, 2 ], [ 2, 1 ] ]
+
+    
+*** Testing 3
+
+    #+BEGIN_SRC js :noweb strip-export :exports both
+    
+    <<final>>
+    
+    return permute([1, 2, 3])
+    
+    #+END_SRC
+
+    #+RESULTS:
+    : [
+    :   [ 1, 2, 3 ],
+    :   [ 1, 3, 2 ],
+    :   [ 2, 1, 3 ],
+    :   [ 2, 3, 1 ],
+    :   [ 3, 1, 2 ],
+    :   [ 3, 2, 1 ]
+    : ]
+
+- Did you have fun?
+  - Go have some cookies
