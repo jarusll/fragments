@@ -12,4 +12,4 @@ tags: ["checkout"]
 
 Get here <https://github.com/hainguyents13/mechvibes>
 
-I use this to record my youtube videos.
+I use for my youtube videos.
