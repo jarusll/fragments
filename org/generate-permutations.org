@@ -1,7 +1,7 @@
 #+title: Generate Permutations
 #+date: 2022-05-28
 #+draft: true
-#+tags: solution
+#+filetags: solution
 
 * What is permutation?
 
@@ -255,6 +255,37 @@
     :   [ 3, 1, 2 ],
     :   [ 3, 2, 1 ]
     : ]
+
+- Did you have fun?
+  - Go have some cookies
+
+*** Testing 4
+
+    #+BEGIN_SRC js :noweb strip-export :exports both
+    
+    <<final>>
+    
+    return permute([1, 2, 3, 4])
+    
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_example
+    [
+      [ 1, 2, 3, 4 ], [ 1, 2, 4, 3 ],
+      [ 1, 3, 2, 4 ], [ 1, 3, 4, 2 ],
+      [ 1, 4, 2, 3 ], [ 1, 4, 3, 2 ],
+      [ 2, 1, 3, 4 ], [ 2, 1, 4, 3 ],
+      [ 2, 3, 1, 4 ], [ 2, 3, 4, 1 ],
+      [ 2, 4, 1, 3 ], [ 2, 4, 3, 1 ],
+      [ 3, 1, 2, 4 ], [ 3, 1, 4, 2 ],
+      [ 3, 2, 1, 4 ], [ 3, 2, 4, 1 ],
+      [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ],
+      [ 4, 1, 2, 3 ], [ 4, 1, 3, 2 ],
+      [ 4, 2, 1, 3 ], [ 4, 2, 3, 1 ],
+      [ 4, 3, 1, 2 ], [ 4, 3, 2, 1 ]
+    ]
+    #+end_example
 
 - Did you have fun?
   - Go have some cookies

@@ -2,6 +2,7 @@
 title = "Generate Permutations"
 author = ["Suraj Yadav"]
 date = 2022-05-28
+tags = ["solution"]
 draft = false
 +++
 
@@ -294,3 +295,37 @@ return permute([1, 2, 3])
   [ 3, 2, 1 ]
 ]
 ```
+
+-   Did you have fun?
+    -   Go have some cookies
+
+
+#### Testing 4 {#testing-4}
+
+```js
+
+
+
+return permute([1, 2, 3, 4])
+
+```
+
+```text
+[
+  [ 1, 2, 3, 4 ], [ 1, 2, 4, 3 ],
+  [ 1, 3, 2, 4 ], [ 1, 3, 4, 2 ],
+  [ 1, 4, 2, 3 ], [ 1, 4, 3, 2 ],
+  [ 2, 1, 3, 4 ], [ 2, 1, 4, 3 ],
+  [ 2, 3, 1, 4 ], [ 2, 3, 4, 1 ],
+  [ 2, 4, 1, 3 ], [ 2, 4, 3, 1 ],
+  [ 3, 1, 2, 4 ], [ 3, 1, 4, 2 ],
+  [ 3, 2, 1, 4 ], [ 3, 2, 4, 1 ],
+  [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ],
+  [ 4, 1, 2, 3 ], [ 4, 1, 3, 2 ],
+  [ 4, 2, 1, 3 ], [ 4, 2, 3, 1 ],
+  [ 4, 3, 1, 2 ], [ 4, 3, 2, 1 ]
+]
+```
+
+-   Did you have fun?
+    -   Go have some cookies
