@@ -31,7 +31,7 @@
     - ={2, 3}=
     - ={3, 2}=
 
-  - Do they look like something?
+  - Do they resemble something?
     - No
 
   - What about permutation of ={2, 3}=?
@@ -255,9 +255,6 @@
     :   [ 3, 1, 2 ],
     :   [ 3, 2, 1 ]
     : ]
-
-- Did you have fun?
-  - Go have some cookies
 
 *** Testing 4
 
