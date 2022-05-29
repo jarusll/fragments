@@ -1,6 +1,7 @@
 #+title: Middle of Linked List
 #+date: 2022-05-29
 #+draft: true
+#+filetags: solution
 
 * 2 Pointers
   
