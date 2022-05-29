@@ -34,7 +34,7 @@ draft = false
     -   `{2, 3}`
     -   `{3, 2}`
 
--   Do they look like something?
+-   Do they resemble something?
     -   No
 
 -   What about permutation of `{2, 3}`?
@@ -155,11 +155,37 @@ Lets test to assert the algorithm correctness
 <a id="code-snippet--test"></a>
 ```js
 
-<<utils>>
+function clone(x){
+    return JSON.parse(JSON.stringify(x))
+}
+
+function remove(item, array){
+    const cloned = clone(array)
+    cloned.splice(cloned.indexOf(item), 1)
+    return cloned
+}
+
+function append(item, array){
+    return [item].concat(array)
+}
+
+
+function flatten(array){
+    return array.reduce((acc, val) => acc.concat(val), []);
+}
+
 
 function permute(array){
-	<<permute-base-case>>
-	<<permute-reduction-case>>
+	if (array.length <= 1){
+	    return array
+	}
+
+	return array.map(item => {
+	    const head = item
+	    const rest = remove(head, array)
+	    const rest_permutation = permute(rest)
+	    return rest_permutation.map(x => append(head, x))
+	})
 }
 ```
 
@@ -198,7 +224,6 @@ This is odd.
     -   `[[1, 2], [2, 1]]`
 
 -   If only there was a way to flatten the lists
-
     <a id="code-snippet--flatten"></a>
     ```js
 
@@ -295,9 +320,6 @@ return permute([1, 2, 3])
   [ 3, 2, 1 ]
 ]
 ```
-
--   Did you have fun?
-    -   Go have some cookies
 
 
 #### Testing 4 {#testing-4}

@@ -143,8 +143,9 @@
    Lets test to assert the algorithm correctness
    
 *** Full test code
+
     #+NAME: test
-    #+BEGIN_SRC js
+    #+BEGIN_SRC js :noweb yes
 
       <<utils>>
 
