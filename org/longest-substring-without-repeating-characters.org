@@ -1,0 +1,27 @@
+#+title: Longest substring without repeating characters
+#+date: <2022-05-29T15:40:47+05:30>
+#+draft: true
+
+* Substring without repeating characters(WRC)
+  
+- Is =a= a substring of =abb=?
+  - Yes, =abb= contains =a=
+
+- Is =a= a substring WRC of =abb=?
+  - Yes, =a= occurs only once in the substring =a=
+
+- Is =ab= a substring WRC of =abb=?
+  - Yes
+
+- Is =abb= substring WRC of =abb=?
+  - No, =b= occurs twice
+
+- Can we say for substring WRC =X= and an adjacent character =x= to be a substring WRC in =Y=, =x= should not occur in =X= ?
+  where
+| variable | value   |
+|----------+---------|
+| =X=      | =abc=   |
+| =Y=      | =abcde= |
+| =x=      | =d=     |
+
+  
