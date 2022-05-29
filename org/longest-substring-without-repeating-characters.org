@@ -4,24 +4,61 @@
 
 * Substring without repeating characters(WRC)
   
-- Is =a= a substring of =abb=?
-  - Yes, =abb= contains =a=
+  - Is =a= a substring of =abb=?
+    - Yes, =abb= contains =a=
 
-- Is =a= a substring WRC of =abb=?
-  - Yes, =a= occurs only once in the substring =a=
+  - Is =a= a substring WRC of =abb=?
+    - Yes, =a= occurs only once in the substring =a=
 
-- Is =ab= a substring WRC of =abb=?
-  - Yes
+  - Is =ab= a substring WRC of =abb=?
+    - Yes
 
-- Is =abb= substring WRC of =abb=?
-  - No, =b= occurs twice
+  - Is =abb= substring WRC of =abb=?
+    - No, =b= occurs twice
 
-- Can we say for substring WRC =X= and an adjacent character =x= to be a substring WRC in =Y=, =x= should not occur in =X= ?
-  where
-| variable | value   |
-|----------+---------|
-| =X=      | =abc=   |
-| =Y=      | =abcde= |
-| =x=      | =d=     |
+  - Cay we say for substring WRC =X= and an adjacent substring =Y= to be a substring WRC in =Z=, =Y= should not occur in =X= ?
+    where
+    | variable | value   |
+    |----------+---------|
+    | =X=      | =ab=    |
+    | =Y=      | =cd=    |
+    | =Z=      | =abcde= |
+    - Yes
 
+  - With given base case & reduction case, can we find all substrings WRC in a given string?
+    - Yes
+
+* Code
+
+  #+BEGIN_SRC js :noweb no
+    function substrings(string){
+	return allSubstring(string, 0, string.length - 1)
+    }
+
+    function allSubstring(string, left, right, mem = {}){
+	<<substring-base-case>>
+	<<substring-reduction-case>>
+    }
+  #+END_SRC
   
+In =allSubstring=, =left= & =right= are indexes and =mem= is storage variable.
+
+** BASE CASE
+   A single character which is present in string is always a substring WRC in a string 
+
+   For string =abb=
+   | left | right | character | substring WRC |
+   |------+-------+-----------+---------------|
+   |    1 |     1 | =a=       | T             |
+   |    2 |     2 | =b=       | T             |
+   |    3 |     3 | =b=       | T             |
+
+   #+NAME: substring-base-case
+   #+BEGIN_SRC js 
+     if (left === right){
+	 return true
+     }
+
+   #+END_SRC
+   
+** REDUCTION CASE
