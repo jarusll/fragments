@@ -30,15 +30,8 @@
 
 * Code
 
-  #+BEGIN_SRC js :noweb no
-    function substrings(string){
-	return allSubstring(string, 0, string.length - 1)
-    }
-
-    function allSubstring(string, left, right, mem = {}){
-	<<substring-base-case>>
-	<<substring-reduction-case>>
-    }
+  #+NAME: main
+  #+BEGIN_SRC ruby :noweb yes
   #+END_SRC
   
 In =allSubstring=, =left= & =right= are indexes and =mem= is storage variable.
@@ -54,11 +47,24 @@ In =allSubstring=, =left= & =right= are indexes and =mem= is storage variable.
    |    3 |     3 | =b=       | T             |
 
    #+NAME: substring-base-case
-   #+BEGIN_SRC js 
-     if (left === right){
-	 return true
-     }
+   #+BEGIN_SRC ruby
+     if left == right
+	 return [true, string[left]]
 
    #+END_SRC
    
 ** REDUCTION CASE
+
+   #+NAME: substring-reduction-case
+   #+BEGIN_SRC ruby
+   #+END_SRC
+
+
+* Testing
+
+
+  #+BEGIN_SRC ruby :noweb yes :results output :tangle string.rb
+  <<main>>
+  #+END_SRC
+
+  #+RESULTS:
